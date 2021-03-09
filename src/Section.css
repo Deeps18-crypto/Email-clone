@@ -1,0 +1,18 @@
+.section {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  min-width: 200px;
+  border-bottom-width: 2px;
+  cursor: pointer;
+  color: grey;
+  border-width: 0 !important;
+}
+.section--active {
+  background-color: whitesmoke;
+  border-width: 3px !important;
+}
+.section:hover {
+  background-color: whitesmoke;
+  border-width: 3px !important;
+}
