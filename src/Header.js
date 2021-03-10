@@ -6,8 +6,15 @@ import SearchIcon from "@material-ui/icons/Search";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import AppsIcon from "@material-ui/icons/Apps";
 import SettingsIcon from "@material-ui/icons/Settings";
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/counter/UserSlice";
 
 function Header() {
+  const user = useSelector(selectUser);
+
+  const signOut = ()=>{
+    
+  }
   return (
     <div className="header">
       <div className="header__left">
@@ -31,7 +38,7 @@ function Header() {
         <IconButton>
           <AppsIcon />
         </IconButton>
-        <Avatar />
+        <Avatar src={user?.photoUrl} />
       </div>
     </div>
   );
