@@ -85,6 +85,90 @@ function EmailList() {
           description="asdfasdfadsfadsfasffasfffjasf9we8roujweodksfcae8wurfjoasdilkfsfcae8wurfjoas"
           time="10pm"
         />
+         <EmailRow
+          title="resume"
+          message="hey man its working"
+          subject="Yoman"
+          description="asdfasdfadsfadsfasffasfffjasf9we8roujweodksfcae8wurfjoasdilkfsfcae8wurfjoas"
+          time="10pm"
+        />
+         <EmailRow
+          title="resume"
+          message="hey man its working"
+          subject="Yoman"
+          description="asdfasdfadsfadsfasffasfffjasf9we8roujweodksfcae8wurfjoasdilkfsfcae8wurfjoas"
+          time="10pm"
+        />
+         <EmailRow
+          title="resume"
+          message="hey man its working"
+          subject="Yoman"
+          description="asdfasdfadsfadsfasffasfffjasf9we8roujweodksfcae8wurfjoasdilkfsfcae8wurfjoas"
+          time="10pm"
+        />
+         <EmailRow
+          title="resume"
+          message="hey man its working"
+          subject="Yoman"
+          description="asdfasdfadsfadsfasffasfffjasf9we8roujweodksfcae8wurfjoasdilkfsfcae8wurfjoas"
+          time="10pm"
+        />
+         <EmailRow
+          title="resume"
+          message="hey man its working"
+          subject="Yoman"
+          description="asdfasdfadsfadsfasffasfffjasf9we8roujweodksfcae8wurfjoasdilkfsfcae8wurfjoas"
+          time="10pm"
+        />
+         <EmailRow
+          title="resume"
+          message="hey man its working"
+          subject="Yoman"
+          description="asdfasdfadsfadsfasffasfffjasf9we8roujweodksfcae8wurfjoasdilkfsfcae8wurfjoas"
+          time="10pm"
+        />
+         <EmailRow
+          title="resume"
+          message="hey man its working"
+          subject="Yoman"
+          description="asdfasdfadsfadsfasffasfffjasf9we8roujweodksfcae8wurfjoasdilkfsfcae8wurfjoas"
+          time="10pm"
+        />
+         <EmailRow
+          title="resume"
+          message="hey man its working"
+          subject="Yoman"
+          description="asdfasdfadsfadsfasffasfffjasf9we8roujweodksfcae8wurfjoasdilkfsfcae8wurfjoas"
+          time="10pm"
+        />
+         <EmailRow
+          title="resume"
+          message="hey man its working"
+          subject="Yoman"
+          description="asdfasdfadsfadsfasffasfffjasf9we8roujweodksfcae8wurfjoasdilkfsfcae8wurfjoas"
+          time="10pm"
+        />
+         <EmailRow
+          title="resume"
+          message="hey man its working"
+          subject="Yoman"
+          description="asdfasdfadsfadsfasffasfffjasf9we8roujweodksfcae8wurfjoasdilkfsfcae8wurfjoas"
+          time="10pm"
+        />
+         <EmailRow
+          title="resume"
+          message="hey man its working"
+          subject="Yoman"
+          description="asdfasdfadsfadsfasffasfffjasf9we8roujweodksfcae8wurfjoasdilkfsfcae8wurfjoas"
+          time="10pm"
+        />
+         <EmailRow
+          title="resume"
+          message="hey man its working"
+          subject="Yoman"
+          description="asdfasdfadsfadsfasffasfffjasf9we8roujweodksfcae8wurfjoasdilkfsfcae8wurfjoas"
+          time="10pm"
+        />
       </div>
     </div>
   );
