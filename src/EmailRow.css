@@ -13,6 +13,9 @@
 .emailRow__options {
   display: flex;
 }
+.emailRow__title {
+  flex: 0.2;
+} 
 .emailRow__message {
   flex: 0.8;
   display: flex;
@@ -27,9 +30,7 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-.emailRow__title {
-  flex: 0.3;
-}
+
 .emailRow__time {
   padding-right: 15px;
   font-size: 9px;
