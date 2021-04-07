@@ -4,7 +4,7 @@
 
 * In this Gmail app the user can compose the new mail.
 
-*  The mail data are stored in the firebase(fireStore) and fetches the data to UI
+* The mail data are stored in the firebase(fireStore) and fetches the data to UI.
 
 * The app includes REACT-ROUTER to load the page without any refresh.
 
