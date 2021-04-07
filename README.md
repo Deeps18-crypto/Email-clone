@@ -10,6 +10,6 @@
 
 * The state of the app is maintained by REDUX.
 
-* The app has google authentication
+* The app has google authentication.
 
 
