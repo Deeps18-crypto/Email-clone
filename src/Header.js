@@ -6,15 +6,20 @@ import SearchIcon from "@material-ui/icons/Search";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import AppsIcon from "@material-ui/icons/Apps";
 import SettingsIcon from "@material-ui/icons/Settings";
-import { useSelector } from "react-redux";
-import { selectUser } from "./features/counter/UserSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { selectUser, logout } from "./features/counter/UserSlice";
+import { auth, provider } from "./firebase";
+import { useHistory } from "react-router-dom";
 
 function Header() {
   const user = useSelector(selectUser);
+  const dispatch = useDispatch();
 
-  const signOut = ()=>{
-    
-  }
+  const signOut = () => {
+    auth.signOut().then(() => {
+      dispatch(logout());
+    });
+  };
   return (
     <div className="header">
       <div className="header__left">
@@ -32,6 +37,7 @@ function Header() {
         <ArrowDropDownIcon />
       </div>
       <div className="header__right">
+        <IconButton onClick={signOut}>Logout</IconButton>
         <IconButton>
           <SettingsIcon />
         </IconButton>

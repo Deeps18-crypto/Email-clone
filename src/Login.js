@@ -4,8 +4,10 @@ import { auth, provider } from "./firebase";
 import { Button } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import { login } from "./features/counter/UserSlice";
+import { useHistory } from "react-router-dom";
 
 function Login() {
+  const history = useHistory();
   const dispatch = useDispatch();
   const signIn = () => {
     auth
