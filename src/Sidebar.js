@@ -1,6 +1,6 @@
 import React from "react";
 import "./Sidebar.css";
-import { Button, IconButton } from "@material-ui/core";
+import { Button, Hidden, IconButton } from "@material-ui/core";
 import InboxIcon from "@material-ui/icons/Inbox";
 import SidebarOption from "./SidebarOption";
 import AddIcon from "@material-ui/icons/Add";

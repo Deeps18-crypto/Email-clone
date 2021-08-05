@@ -9,7 +9,7 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import { useSelector, useDispatch } from "react-redux";
 import { selectUser, logout } from "./features/counter/UserSlice";
 import { auth, provider } from "./firebase";
-import { useHistory } from "react-router-dom";
+import Hidden from "@material-ui/core/Hidden";
 
 function Header() {
   const user = useSelector(selectUser);
@@ -21,32 +21,36 @@ function Header() {
     });
   };
   return (
-    <div className="header">
-      <div className="header__left">
-        <IconButton>
-          <MenuIcon />
-        </IconButton>
-        <img
-          src="https://i.pinimg.com/originals/ae/47/fa/ae47fa9a8fd263aa364018517020552d.png"
-          alt=""
-        />
+    <>
+      <div className="header">
+        <div className="header__left">
+          <IconButton>
+            <MenuIcon />
+          </IconButton>
+          <img
+            src="https://i.pinimg.com/originals/ae/47/fa/ae47fa9a8fd263aa364018517020552d.png"
+            alt=""
+          />
+        </div>
+        <Hidden only={["sm", "xs"]}>
+          <div className="header__middle">
+            <SearchIcon />
+            <input placeholder="Search Email" type="text" />
+            <ArrowDropDownIcon />
+          </div>
+        </Hidden>
+        <div className="header__right">
+          <IconButton onClick={signOut}>Logout</IconButton>
+          <IconButton>
+            <SettingsIcon />
+          </IconButton>
+          <IconButton>
+            <AppsIcon />
+          </IconButton>
+          <Avatar src={user?.photoUrl} />
+        </div>
       </div>
-      <div className="header__middle">
-        <SearchIcon />
-        <input placeholder="Search Email" type="text" />
-        <ArrowDropDownIcon />
-      </div>
-      <div className="header__right">
-        <IconButton onClick={signOut}>Logout</IconButton>
-        <IconButton>
-          <SettingsIcon />
-        </IconButton>
-        <IconButton>
-          <AppsIcon />
-        </IconButton>
-        <Avatar src={user?.photoUrl} />
-      </div>
-    </div>
+    </>
   );
 }
 
