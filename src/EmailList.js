@@ -1,4 +1,4 @@
-import { Checkbox, IconButton } from "@material-ui/core";
+import { Checkbox, Hidden, IconButton } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import "./EmailList.css";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
@@ -32,41 +32,44 @@ function EmailList() {
   const [email, setEmail] = useState([]);
   return (
     <div className="emailList">
-      <div className="emailList__settings">
-        <div className="emailList__settingsLeft">
-          <IconButton>
-            <Checkbox />
-          </IconButton>
-          <IconButton>
-            <ArrowDropDownIcon />
-          </IconButton>
-          <IconButton>
-            <RedoIcon />
-          </IconButton>
-          <IconButton>
-            <MoreVertIcon />
-          </IconButton>
+      <Hidden only={["sm", "xs"]}>
+        <div className="emailList__settings">
+          <div className="emailList__settingsLeft">
+            <IconButton>
+              <Checkbox />
+            </IconButton>
+            <IconButton>
+              <ArrowDropDownIcon />
+            </IconButton>
+            <IconButton>
+              <RedoIcon />
+            </IconButton>
+            <IconButton>
+              <MoreVertIcon />
+            </IconButton>
+          </div>
+          <div className="emailList__settingRight">
+            <IconButton>
+              <ChevronLeftIcon />
+            </IconButton>
+            <IconButton>
+              <ChevronRightIcon />
+            </IconButton>
+            <IconButton>
+              <KeyboardHideIcon />
+            </IconButton>
+            <IconButton>
+              <SettingsIcon />
+            </IconButton>
+          </div>
         </div>
-        <div className="emailList__settingRight">
-          <IconButton>
-            <ChevronLeftIcon />
-          </IconButton>
-          <IconButton>
-            <ChevronRightIcon />
-          </IconButton>
-          <IconButton>
-            <KeyboardHideIcon />
-          </IconButton>
-          <IconButton>
-            <SettingsIcon />
-          </IconButton>
+        <div className="emailList__section">
+          <Section Icon={InboxIcon} title="primary" color="red" selected />
+          <Section Icon={PeopleIcon} title="Social" color="#1A73E8" />
+          <Section Icon={LocalOfferIcon} title="Promotions" color="green" />
         </div>
-      </div>
-      <div className="emailList__section">
-        <Section Icon={InboxIcon} title="primary" color="red" selected />
-        <Section Icon={PeopleIcon} title="Social" color="#1A73E8" />
-        <Section Icon={LocalOfferIcon} title="Promotions" color="green" />
-      </div>
+      </Hidden>
+
       <div className="emailList__list">
         {email.map(({ id, data }) => (
           <EmailRow

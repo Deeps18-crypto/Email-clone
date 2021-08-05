@@ -19,40 +19,47 @@ import { openSendMessage } from "./features/counter/MailSlice";
 function Sidebar() {
   const dispatch = useDispatch();
   return (
-    <div className="sidebar">
-      <Button
-        className="sidebar__compose"
-        startIcon={<AddIcon fontSize="large" />}
-        onClick={() => dispatch(openSendMessage())}
-      >
-        Compose
-      </Button>
-      <SidebarOption
-        Icon={InboxIcon}
-        title="Inbox"
-        number={54}
-        selected={true}
-      />
-      <SidebarOption Icon={StarIcon} title="Starred" number={54} />
-      <SidebarOption Icon={AccessTimeIcon} title="Snoozed" number={54} />
-      <SidebarOption Icon={LabelImportantIcon} title="Important" number={54} />
-      <SidebarOption Icon={NearMeIcon} title="Sent" number={54} />
-      <SidebarOption Icon={NoteIcon} title="Draft" number={54} />
-      <SidebarOption Icon={ExpandMoreIcon} title="More" number={54} />
-      <div className="sidebar__footer">
-        <div className="siderbar__footerIcons">
-          <IconButton>
-            <PersonIcon />
-          </IconButton>
-          <IconButton>
-            <DuoIcon />
-          </IconButton>
-          <IconButton>
-            <PhoneIcon />
-          </IconButton>
+    <Hidden only={["sm", "xs"]}>
+      <div className="sidebar">
+        <Button
+          className="sidebar__compose"
+          startIcon={<AddIcon fontSize="large" />}
+          onClick={() => dispatch(openSendMessage())}
+        >
+          Compose
+        </Button>
+        <SidebarOption
+          Icon={InboxIcon}
+          title="Inbox"
+          number={54}
+          selected={true}
+        />
+        <SidebarOption Icon={StarIcon} title="Starred" number={54} />
+        <SidebarOption Icon={AccessTimeIcon} title="Snoozed" number={54} />
+        <SidebarOption
+          Icon={LabelImportantIcon}
+          title="Important"
+          number={54}
+        />
+        <SidebarOption Icon={NearMeIcon} title="Sent" number={54} />
+        <SidebarOption Icon={NoteIcon} title="Draft" number={54} />
+        <SidebarOption Icon={ExpandMoreIcon} title="More" number={54} />
+
+        <div className="sidebar__footer">
+          <div className="siderbar__footerIcons">
+            <IconButton>
+              <PersonIcon />
+            </IconButton>
+            <IconButton>
+              <DuoIcon />
+            </IconButton>
+            <IconButton>
+              <PhoneIcon />
+            </IconButton>
+          </div>
         </div>
       </div>
-    </div>
+    </Hidden>
   );
 }
 

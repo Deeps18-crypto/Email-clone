@@ -1,4 +1,4 @@
-import { Checkbox, IconButton } from "@material-ui/core";
+import { Checkbox, Hidden, IconButton } from "@material-ui/core";
 import LabelImportantOutlinedIcon from "@material-ui/icons/LabelImportantOutlined";
 import StarBorderOutlinedIcon from "@material-ui/icons/StarBorderOutlined";
 import React from "react";
@@ -25,15 +25,17 @@ function EmailRow({ title, description, id, subject, time, message }) {
   };
   return (
     <div onClick={openMail} className="emailRow">
-      <div className="emailRow__options">
-        <Checkbox />
-        <IconButton>
-          <StarBorderOutlinedIcon />
-        </IconButton>
-        <IconButton>
-          <LabelImportantOutlinedIcon />
-        </IconButton>
-      </div>
+      <Hidden only={["sm", "xs"]}>
+        <div className="emailRow__options">
+          <Checkbox />
+          <IconButton>
+            <StarBorderOutlinedIcon />
+          </IconButton>
+          <IconButton>
+            <LabelImportantOutlinedIcon />
+          </IconButton>
+        </div>
+      </Hidden>
       <h3 className="emailRow__title">{title}</h3>
       <div className="emailRow__message">
         <h4>

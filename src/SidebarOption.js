@@ -6,10 +6,9 @@ function SidebarOption({ Icon, title, number, selected }) {
   return (
     <div className={`sidebarOption ${selected && "sidebarOption--active"}`}>
       <Icon />
-      <Hidden only={["sm", "xs"]}>
         <h3>{title}</h3>
         <p>{number}</p>
-      </Hidden>
+      
     </div>
   );
 }
