@@ -10,7 +10,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: theme.spacing(1.5),
+    padding: theme.spacing(4),
     [theme.breakpoints.down("sm")]: {
       display: "flex",
       flex: "1",
@@ -59,16 +59,32 @@ function EmailRow({ title, description, id, subject, time, message }) {
           <LabelImportantOutlinedIcon />
         </IconButton>
       </div>
-      <div className={classes.root}>
-        <h3 className="emailRow__title">{title}</h3>
-        <div className="emailRow__message">
-          <h4>
-            {subject}{" "}
-            <spam className="emailRow__description">- {description}</spam>
-          </h4>
+      <Hidden only={["lg", "sm", "md"]}>
+        <div className="xsTimeAndTitle">
+          <div className="xsEmailRow">
+            <h5>{title}</h5>
+            <h6>
+              {subject}{" "}
+              <spam className="emailRow__description">- {description}</spam>
+            </h6>
+          </div>
         </div>
-        <div className="emailRow__time">{time}</div>
-      </div>
+        <div className="xsEmailRow_Time">
+          <p>{time}</p>
+        </div>
+      </Hidden>
+      <Hidden only="xs">
+        <div className={classes.root}>
+          <h3 className="emailRow__title">{title}</h3>
+          <div className="emailRow__message">
+            <h4>
+              {subject}{" "}
+              <spam className="emailRow__description">- {description}</spam>
+            </h4>
+          </div>
+          <div className="emailRow__time">{time}</div>
+        </div>
+      </Hidden>
     </div>
   );
 }

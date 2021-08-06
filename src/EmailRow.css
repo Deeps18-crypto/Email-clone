@@ -15,7 +15,7 @@
 }
 .emailRow__title {
   flex: 0.3;
-} 
+}
 .emailRow__message {
   flex: 0.8;
   display: flex;
@@ -39,4 +39,13 @@
 .emailRow__description {
   font-weight: 400;
   color: gray;
+}
+.xsTimeAndTitle {
+  align-items: center;
+  flex: 1;
+}
+
+.xsEmailRow_Time > p {
+  font-size: 10px;
+  margin-right: 10px;
 }
