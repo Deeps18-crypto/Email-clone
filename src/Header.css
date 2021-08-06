@@ -36,3 +36,28 @@
   align-items: center;
   padding-right: 20px;
 }
+.showMenu {
+  position: fixed;
+  z-index: 500;
+  width: 70%;
+  padding: 16px;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background-color:white;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+}
+.showMenu_name {
+  position: relative;
+  height: 100vh;
+}
+.cancel_nameShow {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}

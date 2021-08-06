@@ -10,28 +10,52 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectUser, logout } from "./features/counter/UserSlice";
 import { auth, provider } from "./firebase";
 import Hidden from "@material-ui/core/Hidden";
+import { useState } from "react";
 
 function Header() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
+  const [showMenu, setShowMenu] = useState(false);
 
   const signOut = () => {
     auth.signOut().then(() => {
       dispatch(logout());
     });
   };
+
   return (
     <>
+      {showMenu && (
+        <>
+          <div className="showMenu">
+            <div className="showMenu_name">
+              <div className="header__left">
+                <img
+                  src="https://i.pinimg.com/originals/ae/47/fa/ae47fa9a8fd263aa364018517020552d.png"
+                  alt=""
+                />
+              </div>
+
+              <IconButton onClick={signOut}>Logout</IconButton>
+            </div>
+          </div>
+          <div className="cancel_nameShow" onClick={() => setShowMenu(false)} />
+        </>
+      )}
       <div className="header">
-        <div className="header__left">
-          <IconButton>
-            <MenuIcon />
-          </IconButton>
+        <div className="header__left" onClick={() => setShowMenu(true)}>
+          <Hidden only={["md", "lg", "xl"]}>
+            <IconButton>
+              <MenuIcon />
+            </IconButton>
+          </Hidden>
+
           <img
             src="https://i.pinimg.com/originals/ae/47/fa/ae47fa9a8fd263aa364018517020552d.png"
             alt=""
           />
         </div>
+
         <Hidden only={["sm", "xs"]}>
           <div className="header__middle">
             <SearchIcon />
@@ -40,7 +64,6 @@ function Header() {
           </div>
         </Hidden>
         <div className="header__right">
-          <IconButton onClick={signOut}>Logout</IconButton>
           <IconButton>
             <SettingsIcon />
           </IconButton>

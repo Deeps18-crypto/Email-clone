@@ -63,9 +63,9 @@ function EmailRow({ title, description, id, subject, time, message }) {
         <div className="xsTimeAndTitle">
           <div className="xsEmailRow">
             <h5>{title}</h5>
-            <h6>
+            <h6 className="emailRow__xsSubject">
               {subject}{" "}
-              <spam className="emailRow__description">- {description}</spam>
+              <spam className="emailRow__xsdescription">- {description}</spam>
             </h6>
           </div>
         </div>

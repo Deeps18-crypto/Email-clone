@@ -36,9 +36,19 @@
   font-size: 9px;
   font-weight: bold;
 }
-.emailRow__description {
+.emailRow__xsdescription {
   font-weight: 400;
   color: gray;
+  width: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.emailRow__xsSubject {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .xsTimeAndTitle {
   align-items: center;
