@@ -12,19 +12,26 @@ const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(1.5),
     [theme.breakpoints.down("sm")]: {
-      display:"block"
+      display: "flex",
+      flex: "1",
+    },
+    [theme.breakpoints.down("xs")]: {
+      display: "block",
     },
     [theme.breakpoints.up("md")]: {
-      backgroundColor: theme.palette.primary.main,
+      display: "flex",
+      flex: "1",
     },
-    [theme.breakpoints.up("lg")]: {},
+    [theme.breakpoints.up("lg")]: {
+      display: "flex",
+      flex: "1",
+    },
   },
 }));
 
 function EmailRow({ title, description, id, subject, time, message }) {
   const history = useHistory();
   const dispatch = useDispatch();
-
   const openMail = () => {
     dispatch(
       selectMail({
@@ -39,28 +46,29 @@ function EmailRow({ title, description, id, subject, time, message }) {
   };
   const classes = useStyles();
   return (
-    <div onClick={openMail} className="emailRow" className={classes.root}>
-      <Hidden only={["sm", "xs"]}>
-        <div className="emailRow__options">
+    <div onClick={openMail} className="emailRow">
+      <div className="emailRow__options">
+        <Hidden only={["sm", "xs"]}>
           <Checkbox />
           <IconButton>
             <StarBorderOutlinedIcon />
           </IconButton>
-          <IconButton>
-            <LabelImportantOutlinedIcon />
-          </IconButton>
-        </div>
-      </Hidden>
-      <h3 className="emailRow__title">{title}</h3>
-      <div className="emailRow__message">
-        <h4>
-          {subject}{" "}
-          <spam className="emailRow__description">- {description}</spam>
-        </h4>
+        </Hidden>
+
+        <IconButton>
+          <LabelImportantOutlinedIcon />
+        </IconButton>
       </div>
-      <Hidden only={["sm", "xs"]}>
+      <div className={classes.root}>
+        <h3 className="emailRow__title">{title}</h3>
+        <div className="emailRow__message">
+          <h4>
+            {subject}{" "}
+            <spam className="emailRow__description">- {description}</spam>
+          </h4>
+        </div>
         <div className="emailRow__time">{time}</div>
-      </Hidden>
+      </div>
     </div>
   );
 }
