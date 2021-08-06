@@ -1,4 +1,4 @@
-import { Checkbox, Hidden, IconButton } from "@material-ui/core";
+import { Button, Checkbox, Hidden, IconButton } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import "./EmailList.css";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
@@ -14,8 +14,14 @@ import PeopleIcon from "@material-ui/icons/People";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import EmailRow from "./EmailRow";
 import { db } from "./firebase";
+import SidebarOption from "./SidebarOption";
+import AddIcon from "@material-ui/icons/Add";
+import { useDispatch } from "react-redux";
+import { openSendMessage } from "./features/counter/MailSlice";
 
 function EmailList() {
+  const dispatch = useDispatch();
+
   useEffect(() => {
     db.collection("emails")
       .orderBy("timestamp", "desc")
@@ -69,17 +75,23 @@ function EmailList() {
           <Section Icon={LocalOfferIcon} title="Promotions" color="green" />
         </div>
       </Hidden>
-      <div className="emailList__list">
-        {email.map(({ id, data }) => (
-          <EmailRow
-            key={id}
-            title={data.to}
-            time={new Date(data.timestamp?.seconds * 1000).toLocaleString()}
-            description={data.message}
-            subject={data.subject}
-          />
-        ))}
-      </div>
+
+      {email.map(({ id, data }) => (
+        <EmailRow
+          key={id}
+          title={data.to}
+          time={new Date(data.timestamp?.seconds * 1000).toUTCString()}
+          description={data.message}
+          subject={data.subject}
+        />
+      ))}
+      <h4
+        className="emailList__compose"
+        startIcon={<AddIcon fontSize="large" />}
+        onClick={() => dispatch(openSendMessage())}
+      >
+        Compose
+      </h4>
     </div>
   );
 }

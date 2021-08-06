@@ -11,6 +11,10 @@ import { selectUser, logout } from "./features/counter/UserSlice";
 import { auth, provider } from "./firebase";
 import Hidden from "@material-ui/core/Hidden";
 import { useState } from "react";
+import { openSendMessage } from "./features/counter/MailSlice";
+import SidebarOption from "./SidebarOption";
+import AddIcon from "@material-ui/icons/Add";
+import { Button } from "@material-ui/core";
 
 function Header() {
   const user = useSelector(selectUser);
