@@ -26,6 +26,17 @@
   padding: 20px;
   position: relative;
 }
+.mail__xsbodyHeader {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid whitesmoke;
+  padding: 20px;
+  position: relative;
+}
+
+.mail__xsbodyHeader > h2 {
+  margin-top: 40px;
+}
 .mail__bodyHeader > h2 {
   font-weight: 400;
   margin-right: 20px;
@@ -49,11 +60,10 @@
   font-size: 12px;
   color: gray;
 }
-.mail__bodyAlign {
+.mail__xsbodyAlign {
   display: flex;
-  border-top: 2px solid lightgrey;
   border-bottom: 2px solid lightgrey;
-  padding: 20px;
+  padding: 1px ;
 }
 .mail__messageAlign {
   padding: 20px;

@@ -82,7 +82,7 @@ function EmailList() {
         <EmailRow
           key={id}
           title={data.to}
-          time={new Date(data.timestamp?.seconds * 1000).toUTCString()}
+          time={new Date(data.timestamp?.seconds * 1000).toString()}
           description={data.message}
           subject={data.subject}
         />

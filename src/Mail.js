@@ -69,11 +69,12 @@ function Mail() {
         </div>
       </div>
       <Hidden only={["ls", "xl"]}>
-        <div className="mail__bodyHeader">
-          <h2>{selectMail?.subject}</h2>
+        <div className="mail__xsbodyHeader">
           <p className="mail__time">{selectMail?.time}</p>
+
+          <h2>{selectMail?.subject}</h2>
         </div>
-        <div className="mail__bodyAlign">
+        <div className="mail__xsbodyAlign">
           <LabelImportantIcon className="mail__important" />
           &nbsp;<p>{selectMail?.title}</p>
         </div>

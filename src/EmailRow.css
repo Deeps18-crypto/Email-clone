@@ -64,4 +64,8 @@
 .xsEmailRow_Time > p {
   font-size: 10px;
   margin-right: 10px;
+  width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
