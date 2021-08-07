@@ -75,7 +75,7 @@ function Mail() {
         </div>
         <div className="mail__bodyAlign">
           <LabelImportantIcon className="mail__important" />
-          <p>{selectMail?.title}</p>
+          &nbsp;<p>{selectMail?.title}</p>
         </div>
 
         <div className="mail__messageAlign">

@@ -51,12 +51,12 @@
 }
 .mail__bodyAlign {
   display: flex;
-  border-top: 2px solid grey;
-  border-bottom: 2px solid grey;
+  border-top: 2px solid lightgrey;
+  border-bottom: 2px solid lightgrey;
   padding: 20px;
 }
 .mail__messageAlign {
   padding: 20px;
-  background: grey;
-  height: 100vh;
+  background: rgba(235, 233, 233, 0.864);
+  height: 100%;
 }
