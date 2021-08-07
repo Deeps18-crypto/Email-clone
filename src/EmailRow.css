@@ -44,8 +44,14 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.xsEmailRow {
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .emailRow__xsSubject {
-  width: 200px;
+  width: 150px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

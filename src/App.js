@@ -11,6 +11,7 @@ import { selectSendMessageIsOpen } from "./features/counter/MailSlice";
 import { login, selectUser } from "./features/counter/UserSlice";
 import Login from "./Login";
 import { auth } from "./firebase";
+import Compose from "./Compose";
 
 function App() {
   const dispatch = useDispatch();
@@ -35,6 +36,9 @@ function App() {
         <div className="app__body">
           <Sidebar />
           <Switch>
+            <Route path="/composeMail">
+              <Compose />
+            </Route>
             <Route path="/mail">
               <Mail />
             </Route>

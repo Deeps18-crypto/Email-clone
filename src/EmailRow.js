@@ -61,8 +61,8 @@ function EmailRow({ title, description, id, subject, time, message }) {
       </div>
       <Hidden only={["lg", "sm", "md"]}>
         <div className="xsTimeAndTitle">
-          <div className="xsEmailRow">
-            <h5>{title}</h5>
+          <div>
+            <h5 className="xsEmailRow">{title}</h5>
             <h6 className="emailRow__xsSubject">
               {subject}{" "}
               <spam className="emailRow__xsdescription">- {description}</spam>

@@ -14,10 +14,10 @@ import PeopleIcon from "@material-ui/icons/People";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import EmailRow from "./EmailRow";
 import { db } from "./firebase";
-import SidebarOption from "./SidebarOption";
 import AddIcon from "@material-ui/icons/Add";
 import { useDispatch } from "react-redux";
-import { openSendMessage } from "./features/counter/MailSlice";
+import { useHistory } from "react-router-dom";
+
 
 function EmailList() {
   const dispatch = useDispatch();
@@ -36,6 +36,8 @@ function EmailList() {
     console.log(email);
   }, []);
   const [email, setEmail] = useState([]);
+  const history = useHistory();
+
   return (
     <div className="emailList">
       <Hidden only={["sm", "xs"]}>
@@ -85,13 +87,15 @@ function EmailList() {
           subject={data.subject}
         />
       ))}
-      <h4
-        className="emailList__compose"
-        startIcon={<AddIcon fontSize="large" />}
-        onClick={() => dispatch(openSendMessage())}
-      >
-        Compose
-      </h4>
+      <Hidden only={["md", "lg", "xl"]}>
+        <h4
+          className="emailList__compose"
+          startIcon={<AddIcon fontSize="large" />}
+          onClick={() => history.push("/composeMail")}
+        >
+          Compose
+        </h4>
+      </Hidden>
     </div>
   );
 }

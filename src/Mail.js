@@ -1,6 +1,6 @@
 import React from "react";
 import "./Mail.css";
-import { IconButton } from "@material-ui/core";
+import { Hidden, IconButton } from "@material-ui/core";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import MoveToInboxIcon from "@material-ui/icons/MoveToInbox";
 import EmailIcon from "@material-ui/icons/Email";
@@ -29,29 +29,32 @@ function Mail() {
             <ArrowBackIcon />
           </IconButton>
           <IconButton>
-            <MoveToInboxIcon />
-          </IconButton>
-          <IconButton>
-            <EmailIcon />
-          </IconButton>
-          <IconButton>
-            <ErrorIcon />
-          </IconButton>
-          <IconButton>
             <DeleteIcon />
           </IconButton>
-          <IconButton>
-            <WatchLaterIcon />
-          </IconButton>
-          <IconButton>
-            <CheckCircleIcon />
-          </IconButton>
-          <IconButton>
-            <LabelImportantIcon />
-          </IconButton>
-          <IconButton>
-            <MoreVertIcon />
-          </IconButton>
+          <Hidden only={["xs"]}>
+            <IconButton>
+              <MoveToInboxIcon />
+            </IconButton>
+            <IconButton>
+              <EmailIcon />
+            </IconButton>
+            <IconButton>
+              <ErrorIcon />
+            </IconButton>
+            <IconButton>
+              <WatchLaterIcon />
+            </IconButton>
+            <IconButton>
+              <CheckCircleIcon />
+            </IconButton>
+
+            <IconButton>
+              <LabelImportantIcon />
+            </IconButton>
+            <IconButton>
+              <MoreVertIcon />
+            </IconButton>
+          </Hidden>
         </div>
         <div className="mail__toolsRight">
           <IconButton>
@@ -65,17 +68,33 @@ function Mail() {
           </IconButton>
         </div>
       </div>
-      <div className="mail__body">
+      <Hidden only={["ls", "xl"]}>
         <div className="mail__bodyHeader">
           <h2>{selectMail?.subject}</h2>
-          <LabelImportantIcon className="mail__important" />
-          <p>{selectMail?.title}</p>
           <p className="mail__time">{selectMail?.time}</p>
         </div>
-        <div className="mail__message">
+        <div className="mail__bodyAlign">
+          <LabelImportantIcon className="mail__important" />
+          <p>{selectMail?.title}</p>
+        </div>
+
+        <div className="mail__messageAlign">
           <p>{selectMail?.description}</p>
         </div>
-      </div>
+      </Hidden>
+      <Hidden only={["xs"]}>
+        <div className="mail__body">
+          <div className="mail__bodyHeader">
+            <h2>{selectMail?.subject}</h2>
+            <LabelImportantIcon className="mail__important" />
+            <p>{selectMail?.title}</p>
+            <p className="mail__time">{selectMail?.time}</p>
+          </div>
+          <div className="mail__message">
+            <p>{selectMail?.description}</p>
+          </div>
+        </div>
+      </Hidden>
     </div>
   );
 }
