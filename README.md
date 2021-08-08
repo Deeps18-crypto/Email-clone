@@ -10,11 +10,11 @@
 
 * The design of the app is done by material-ui design.
 
-* The composed mail data are stored in the firebase(fireStore) and fetches the data to UI.
-
 * The app includes REACT-ROUTER to load the page without any refresh.
 
 * The state of the app is maintained by REDUX.
+
+* The composed mail data are stored in the firebase(fireStore) and fetches the data to UI.
 
 
 
