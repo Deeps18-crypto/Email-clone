@@ -34,7 +34,7 @@ function Compose() {
       message: data.textarea,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
-    dispatch(closeSendMessage());
+    history.push("/");
   };
   return (
     <>
