@@ -48,7 +48,7 @@ function SendMail() {
         {errors.subject && <p className="sendMail__error">required</p>}
 
         <input
-          name="message"
+          name="message"   
           type="text"
           placeholder="Message..."
           className="sendMail__message"

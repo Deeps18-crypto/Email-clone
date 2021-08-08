@@ -68,7 +68,7 @@ function Mail() {
           </IconButton>
         </div>
       </div>
-      <Hidden only={["ls", "xl"]}>
+      <Hidden only={[ "xl","md","sm","lg"]}>
         <div className="mail__xsbodyHeader">
           <p className="mail__time">{selectMail?.time}</p>
 

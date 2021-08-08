@@ -1,0 +1,38 @@
+.compose__head {
+  background-color: whitesmoke;
+  height: 100vh;
+  width: 100vw;
+}
+
+.compose__from {
+  display: flex;
+  color: grey;
+  padding: 10px;
+}
+.compose__to {
+  display: flex;
+  color: grey;
+  padding: 10px;
+  border-bottom: 1px solid lightgrey;
+}
+.compose__subject {
+  display: flex;
+  color: grey;
+  padding: 10px;
+  border-bottom: 1px solid lightgrey;
+}
+.compose__subject > input {
+  margin-left: 10px;
+  border: none;
+  outline: none;
+}
+.compose__to > input {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 30px;
+  background-color: whitesmoke;
+}
+.compose__fromPara {
+  color: black;
+}
