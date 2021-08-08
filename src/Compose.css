@@ -29,10 +29,18 @@
 .compose__to > input {
   border: none;
   outline: none;
-  width: 100%;
+  width: 80%;
   height: 30px;
   background-color: whitesmoke;
 }
 .compose__fromPara {
   color: black;
+}
+.compose__submit {
+  position: absolute;
+  top: 83px;
+  left: 200px;
+}
+.Compose__error {
+  color: red;
 }
