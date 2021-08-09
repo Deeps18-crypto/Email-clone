@@ -46,12 +46,10 @@
 }
 .compose__message {
   border: none;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
 }
 .compose__message > input {
   border: none;
   outline: none;
-  padding-bottom: 100vh;
+  width: 100vw;
+  background-color: whitesmoke;
 }
