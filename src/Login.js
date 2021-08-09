@@ -14,6 +14,9 @@ function Login() {
       .signInWithPopup(provider)
       .then((user) => {
         console.log(user);
+        sessionStorage.setItem("email", user.email);
+        console.log(localStorage.setItem("email", user.email));
+
         dispatch(
           login({
             displayName: user.displayName,

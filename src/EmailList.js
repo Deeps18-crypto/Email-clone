@@ -17,10 +17,12 @@ import { db } from "./firebase";
 import AddIcon from "@material-ui/icons/Add";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/counter/UserSlice";
 
 function EmailList() {
   const dispatch = useDispatch();
+  var user = useSelector(selectUser);
 
   useEffect(() => {
     db.collection("emails")
@@ -33,7 +35,6 @@ function EmailList() {
           }))
         );
       });
-    console.log(email);
   }, []);
   const [email, setEmail] = useState([]);
   const history = useHistory();

@@ -21,13 +21,13 @@ import { db } from "./firebase";
 import firebase from "firebase";
 
 function Compose() {
-  const { register, handleSubmit, watch, errors } = useForm();
-  const user = useSelector(selectUser);
+  const { register, handleSubmit, errors } = useForm();
+  var user = useSelector(selectUser);
+
   const history = useHistory();
-  const dispatch = useDispatch();
+  console.log(user, "->>>");
 
   const onSubmit = (data) => {
-    console.log(data);
     db.collection("emails").add({
       to: data.to,
       subject: data.subject,
@@ -37,94 +37,91 @@ function Compose() {
     history.push("/");
   };
   return (
-    <>
-      <div className="compose">
-        <div className="mail__tools">
-          <div className="mail__toolsLeft">
-            <IconButton onClick={() => history.push("/")}>
-              <ArrowBackIcon />
-            </IconButton>
-            <IconButton>Compose</IconButton>
-            <Hidden only={["xs"]}>
+    <Hidden only={["md", "lg", "xl", "sm"]}>
+      <>
+        <div className="compose">
+          <div className="mail__tools">
+            <div className="mail__toolsLeft">
+              <IconButton onClick={() => history.push("/")}>
+                <ArrowBackIcon />
+              </IconButton>
+              <IconButton>Compose</IconButton>
+              <Hidden only={["xs"]}>
+                <IconButton>
+                  <MoveToInboxIcon />
+                </IconButton>
+                <IconButton>
+                  <EmailIcon />
+                </IconButton>
+                <IconButton>
+                  <ErrorIcon />
+                </IconButton>
+                <IconButton>
+                  <WatchLaterIcon />
+                </IconButton>
+                <IconButton>
+                  <CheckCircleIcon />
+                </IconButton>
+                <IconButton>
+                  <LabelImportantIcon />
+                </IconButton>
+                <IconButton>
+                  <MoreVertIcon />
+                </IconButton>
+              </Hidden>
+            </div>
+            <div className="mail__toolsRight">
               <IconButton>
-                <MoveToInboxIcon />
+                <PrintIcon />
               </IconButton>
               <IconButton>
-                <EmailIcon />
+                <ExitToAppIcon />
               </IconButton>
-              <IconButton>
-                <ErrorIcon />
-              </IconButton>
-              <IconButton>
-                <WatchLaterIcon />
-              </IconButton>
-              <IconButton>
-                <CheckCircleIcon />
-              </IconButton>
-              <IconButton>
-                <LabelImportantIcon />
-              </IconButton>
-              <IconButton>
-                <MoreVertIcon />
-              </IconButton>
-            </Hidden>
+            </div>
           </div>
-          <div className="mail__toolsRight">
-            <IconButton>
-              <PrintIcon />
-            </IconButton>
-            <IconButton>
-              <ExitToAppIcon />
-            </IconButton>
+          <div className="compose__head">
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className="compose__submit">
+                <IconButton type="submit">
+                  <SendIcon />
+                </IconButton>
+              </div>
+
+              <div className="compose__from">
+                <p>From </p>&nbsp;&nbsp;
+                <p className="compose__fromPara">{user.email}</p>
+              </div>
+              <div className="compose__to">
+                <input
+                  placeholder="To"
+                  name="to"
+                  type="email"
+                  ref={register({ required: true })}
+                />
+                {errors.to && <p className="Compose__error">required</p>}
+              </div>
+              <div className="compose__to">
+                <input
+                  type="text"
+                  placeholder="Subject"
+                  ref={register({ required: true })}
+                  name="subject"
+                />
+                {errors.subject && <p className="Compose__error">required</p>}
+              </div>
+              <div className="compose__message">
+                <input
+                  name="textarea"
+                  type="text"
+                  ref={register({ required: true })}
+                />
+                {errors.textarea && <p className="sendMail__error">required</p>}
+              </div>
+            </form>
           </div>
         </div>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="compose__head">
-            <div className="compose__submit">
-              <IconButton type="submit">
-                <SendIcon />
-              </IconButton>
-            </div>
-
-            <div className="compose__from">
-              <p>From </p>&nbsp;&nbsp;
-              <p className="compose__fromPara">{user.email}</p>
-            </div>
-            <div className="compose__to">
-              <input
-                placeholder="To"
-                name="to"
-                type="email"
-                ref={register({ required: true })}
-              />
-              {errors.to && <p className="Compose__error">required</p>}
-            </div>
-            <div className="compose__to">
-              <input
-                type="text"
-                placeholder="Subject"
-                ref={register({ required: true })}
-                name="subject"
-              />
-              {errors.subject && <p className="Compose__error">required</p>}
-            </div>
-            <div>
-              <textarea
-                name="textarea"
-                id=""
-                cols="100"
-                rows="100"
-                type="text"
-                placeholder="Message..."
-                className="sendMail__message"
-                ref={register({ required: true })}
-              ></textarea>
-              {errors.textarea && <p className="sendMail__error">required</p>}
-            </div>
-          </div>
-        </form>
-      </div>
-    </>
+      </>
+    </Hidden>
   );
 }
 

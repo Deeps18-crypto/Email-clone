@@ -12,7 +12,6 @@ import { auth, provider } from "./firebase";
 import Hidden from "@material-ui/core/Hidden";
 import { useState } from "react";
 
-
 function Header() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
@@ -23,7 +22,6 @@ function Header() {
       dispatch(logout());
     });
   };
-  console.log("user->>>",user);
 
   return (
     <>
