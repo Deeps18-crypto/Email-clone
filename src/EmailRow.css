@@ -50,6 +50,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-bottom: 6px;
 }
 .emailRow__xsSubject {
   width: 150px;
@@ -60,6 +61,7 @@
 .xsTimeAndTitle {
   align-items: center;
   flex: 1;
+  padding: 10px;
 }
 
 .xsEmailRow_Time > p {

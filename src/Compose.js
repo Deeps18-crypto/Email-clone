@@ -110,12 +110,13 @@ function Compose() {
                 {errors.subject && <p className="Compose__error">required</p>}
               </div>
               <div className="compose__message">
-                <input
+                <textarea
                   name="textarea"
                   type="text"
+                  placeholder="message"
                   ref={register({ required: true })}
                 />
-                {errors.textarea && <p className="sendMail__error">required</p>}
+                {errors.textarea && <p className="Compose__error">required</p>}
               </div>
             </form>
           </div>

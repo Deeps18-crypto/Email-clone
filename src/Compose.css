@@ -46,10 +46,14 @@
 }
 .compose__message {
   border: none;
+  display: flex;
+  color: grey;
+  padding: 10px;
 }
-.compose__message > input {
+.compose__message > textarea {
   border: none;
   outline: none;
-  width: 100vw;
+  width: 80%;
+  height: 30px;
   background-color: whitesmoke;
 }
