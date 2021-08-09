@@ -39,7 +39,8 @@
 .compose__submit {
   position: absolute;
   top: 83px;
-  left: 250px;
+  left: 70%;
+  right: 0;
 }
 .Compose__error {
   color: red;

@@ -46,40 +46,7 @@ function Compose() {
                 <ArrowBackIcon />
               </IconButton>
               <IconButton>Compose</IconButton>
-              <Hidden only={["xs"]}>
-                <IconButton>
-                  <MoveToInboxIcon />
-                </IconButton>
-                <IconButton>
-                  <EmailIcon />
-                </IconButton>
-                <IconButton>
-                  <ErrorIcon />
-                </IconButton>
-                <IconButton>
-                  <WatchLaterIcon />
-                </IconButton>
-                <IconButton>
-                  <CheckCircleIcon />
-                </IconButton>
-                <IconButton>
-                  <LabelImportantIcon />
-                </IconButton>
-                <IconButton>
-                  <MoreVertIcon />
-                </IconButton>
-              </Hidden>
             </div>
-            <Hidden only={["xs"]}>
-              <div className="mail__toolsRight">
-                <IconButton>
-                  <PrintIcon />
-                </IconButton>
-                <IconButton>
-                  <ExitToAppIcon />
-                </IconButton>
-              </div>
-            </Hidden>
           </div>
           <div className="compose__head">
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -93,12 +60,12 @@ function Compose() {
               </div>
 
               <div className="compose__from">
-                <p>From </p>&nbsp;&nbsp;
+                <p>From : </p>&nbsp;&nbsp;
                 <p className="compose__fromPara">{user.email}</p>
               </div>
               <div className="compose__to">
                 <input
-                  placeholder="To"
+                  placeholder="To "
                   name="to"
                   type="email"
                   ref={register({ required: true })}
