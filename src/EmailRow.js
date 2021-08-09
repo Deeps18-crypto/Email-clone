@@ -6,28 +6,6 @@ import "./EmailRow.css";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { selectMail } from "./features/counter/MailSlice";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    padding: theme.spacing(4),
-    [theme.breakpoints.down("sm")]: {
-      display: "flex",
-      flex: "1",
-    },
-    [theme.breakpoints.down("xs")]: {
-      display: "block",
-    },
-    [theme.breakpoints.up("md")]: {
-      display: "flex",
-      flex: "1",
-    },
-    [theme.breakpoints.up("lg")]: {
-      display: "flex",
-      flex: "1",
-    },
-  },
-}));
 
 function EmailRow({ title, description, id, subject, time, message }) {
   const history = useHistory();
@@ -44,7 +22,6 @@ function EmailRow({ title, description, id, subject, time, message }) {
     );
     history.push("/mail");
   };
-  const classes = useStyles();
   return (
     <div onClick={openMail} className="emailRow">
       <div className="emailRow__options">
@@ -59,7 +36,7 @@ function EmailRow({ title, description, id, subject, time, message }) {
           <LabelImportantOutlinedIcon />
         </IconButton>
       </div>
-      <Hidden only={["lg", "sm", "md"]}>
+      <Hidden only={["lg", "sm", "md", "xl"]}>
         <div className="xsTimeAndTitle">
           <div>
             <h5 className="xsEmailRow">{title}</h5>
@@ -74,7 +51,7 @@ function EmailRow({ title, description, id, subject, time, message }) {
         </div>
       </Hidden>
       <Hidden only="xs">
-        <div className={classes.root}>
+        <div className="emailRow">
           <h3 className="emailRow__title">{title}</h3>
           <div className="emailRow__message">
             <h4>

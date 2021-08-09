@@ -6,6 +6,7 @@
   cursor: pointer;
   z-index: 999;
   margin-bottom: 15px;
+  flex: 1;
 }
 .emailRow:hover {
   border-top: 1px solid whitesmoke;
@@ -18,10 +19,15 @@
   flex: 0.3;
 }
 .emailRow__message {
-  flex: 0.8;
+  flex: 0.7;
   display: flex;
   align-items: center;
   font-size: 13px;
+}
+.emailRow__time {
+  padding-right: 15px;
+  font-size: 9px;
+  font-weight: bold;
 }
 .emailRow__message > h4 {
   width: 400px;
@@ -32,11 +38,6 @@
   padding-right: 5px;
 }
 
-.emailRow__time {
-  padding-right: 15px;
-  font-size: 9px;
-  font-weight: bold;
-}
 .emailRow__xsdescription {
   font-weight: 400;
   color: gray;
