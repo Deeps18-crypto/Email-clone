@@ -51,16 +51,14 @@ function EmailRow({ title, description, id, subject, time, message }) {
         </div>
       </Hidden>
       <Hidden only="xs">
-        <div className="emailRow">
-          <h3 className="emailRow__title">{title}</h3>
-          <div className="emailRow__message">
-            <h4>
-              {subject}{" "}
-              <spam className="emailRow__description">- {description}</spam>
-            </h4>
-          </div>
-          <div className="emailRow__time">{time}</div>
+        <h3 className="emailRow__title">{title}</h3>
+        <div className="emailRow__message">
+          <h4>
+            {subject}{" "}
+            <spam className="emailRow__description">- {description}</spam>
+          </h4>
         </div>
+        <div className="emailRow__time">{time}</div>
       </Hidden>
     </div>
   );

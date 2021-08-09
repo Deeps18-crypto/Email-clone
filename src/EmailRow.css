@@ -1,12 +1,12 @@
 .emailRow {
   display: flex;
-  align-items: center;
   height: 50px;
   border-bottom: 1px solid whitesmoke;
   cursor: pointer;
   z-index: 999;
   margin-bottom: 15px;
   flex: 1;
+  align-items: center;
 }
 .emailRow:hover {
   border-top: 1px solid whitesmoke;
