@@ -70,18 +70,23 @@ function Compose() {
                 </IconButton>
               </Hidden>
             </div>
-            <div className="mail__toolsRight">
-              <IconButton>
-                <PrintIcon />
-              </IconButton>
-              <IconButton>
-                <ExitToAppIcon />
-              </IconButton>
-            </div>
+            <Hidden only={["xs"]}>
+              <div className="mail__toolsRight">
+                <IconButton>
+                  <PrintIcon />
+                </IconButton>
+                <IconButton>
+                  <ExitToAppIcon />
+                </IconButton>
+              </div>
+            </Hidden>
           </div>
           <div className="compose__head">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="compose__submit">
+                <IconButton>
+                  <PrintIcon />
+                </IconButton>
                 <IconButton type="submit">
                   <SendIcon />
                 </IconButton>
