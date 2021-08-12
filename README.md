@@ -16,6 +16,8 @@
 
 * The state of the app is maintained by REDUX.
 
+* Technology used : Reactjs, ReactRouter, Firebase(firestore), Redux, HTML, CSS.
+
 
 
 
