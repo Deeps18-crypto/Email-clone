@@ -12,7 +12,7 @@
 
 * The app includes REACT-ROUTER to load the page without any refresh.
 
-* The composed mail datas are stored in the firebase(fireStore) and fetches the data to UI.
+* The composed mail datas are stored in the firebase(fireStore) and fetches the mail data to UI.
 
 * The state of the app is maintained by REDUX.
 
