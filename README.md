@@ -2,7 +2,7 @@
 
 * The app has the UI of Gmail.
 
-* The app is complete responsive for mobile and desktop.
+* The app is complete responsive for mobile and desktop version.
 
 * In this Gmail app the user can compose new mail.
 
